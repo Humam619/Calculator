@@ -6,27 +6,31 @@
     <title>Calculator</title>
     <style>
         /* Import the custom font */
-    @font-face {
-        font-family: 'TerrariaFont';
-        src: url('Fonts/ANDYB.TTF') format('truetype');
-    }
-    
-    /* Style for the heading */
-    .heading {
-        font-family: 'TerrariaFont', sans-serif;
-        color: #a9c55e; /* Terraria-like color */
-        font-size: 24px;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 0px #444444;
-    }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f7f7f7;
-            margin: 0;
+        @font-face {
+            font-family: 'TerrariaFont';
+            src: url('Fonts/ANDYB.TTF') format('truetype');
         }
+        
+        /* Style for the heading */
+        .heading {
+            font-family: 'TerrariaFont', sans-serif;
+            color: #a9c55e; /* Terraria-like color */
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px #444444;
+            text-align: center; /* Center text */
+        }
+        
+        /* Centering container for heading and calculator */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Calculator styling */
         .calculator {
             width: 200px;
             padding: 10px;
@@ -36,6 +40,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 5px;
         }
+
         .display {
             grid-column: span 4;
             height: 40px;
@@ -46,6 +51,7 @@
             border: none;
             border-radius: 5px;
         }
+
         .button {
             height: 40px;
             font-size: 18px;
@@ -54,16 +60,20 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
         .button:active {
             background-color: #ddd;
         }
+
         .button.operator {
             background-color: #ffc107;
         }
+
         .button.equal {
             background-color: #28a745;
             grid-column: span 2;
         }
+
         .button.clear {
             background-color: #dc3545;
             grid-column: span 2;
@@ -71,27 +81,30 @@
     </style>
 </head>
 <body>
-    <div class="heading">Humam's Calculator</div>
-    
-    <div class="calculator">
-        <input type="text" id="display" class="display" disabled>
-        <button class="button" onclick="appendNumber('7')">7</button>
-        <button class="button" onclick="appendNumber('8')">8</button>
-        <button class="button" onclick="appendNumber('9')">9</button>
-        <button class="button operator" onclick="appendOperator('+')">+</button>
-        <button class="button" onclick="appendNumber('4')">4</button>
-        <button class="button" onclick="appendNumber('5')">5</button>
-        <button class="button" onclick="appendNumber('6')">6</button>
-        <button class="button operator" onclick="appendOperator('-')">-</button>
-        <button class="button" onclick="appendNumber('1')">1</button>
-        <button class="button" onclick="appendNumber('2')">2</button>
-        <button class="button" onclick="appendNumber('3')">3</button>
-        <button class="button operator" onclick="appendOperator('*')">*</button>
-        <button class="button" onclick="appendNumber('0')">0</button>
-        <button class="button" onclick="appendNumber('.')">.</button>
-        <button class="button equal" onclick="calculate()">=</button>
-        <button class="button operator" onclick="appendOperator('/')">/</button>
-        <button class="button clear" onclick="clearDisplay()">C</button>
+    <!-- Centered container for heading and calculator -->
+    <div class="container">
+        <div class="heading">Humam's Calculator</div>
+        
+        <div class="calculator">
+            <input type="text" id="display" class="display" disabled>
+            <button class="button" onclick="appendNumber('7')">7</button>
+            <button class="button" onclick="appendNumber('8')">8</button>
+            <button class="button" onclick="appendNumber('9')">9</button>
+            <button class="button operator" onclick="appendOperator('+')">+</button>
+            <button class="button" onclick="appendNumber('4')">4</button>
+            <button class="button" onclick="appendNumber('5')">5</button>
+            <button class="button" onclick="appendNumber('6')">6</button>
+            <button class="button operator" onclick="appendOperator('-')">-</button>
+            <button class="button" onclick="appendNumber('1')">1</button>
+            <button class="button" onclick="appendNumber('2')">2</button>
+            <button class="button" onclick="appendNumber('3')">3</button>
+            <button class="button operator" onclick="appendOperator('*')">*</button>
+            <button class="button" onclick="appendNumber('0')">0</button>
+            <button class="button" onclick="appendNumber('.')">.</button>
+            <button class="button equal" onclick="calculate()">=</button>
+            <button class="button operator" onclick="appendOperator('/')">/</button>
+            <button class="button clear" onclick="clearDisplay()">C</button>
+        </div>
     </div>
 
     <script>
