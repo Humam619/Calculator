@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <style>
+        /* Import the custom font */
+    @font-face {
+        font-family: 'TerrariaFont';
+        src: url('./fonts/andyb.ttf') format('truetype');
+    }
+    
+    /* Style for the heading */
+    .heading {
+        font-family: 'TerrariaFont', sans-serif;
+        color: #a9c55e; /* Terraria-like color */
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 0px #444444;
+    }
         body {
             display: flex;
             justify-content: center;
@@ -57,6 +71,8 @@
     </style>
 </head>
 <body>
+    <div class="heading">Humam's Calculator</div>
+    
     <div class="calculator">
         <input type="text" id="display" class="display" disabled>
         <button class="button" onclick="appendNumber('7')">7</button>
